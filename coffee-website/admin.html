@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理后台 · 隅光咖啡</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔐</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Lato:wght@300;400;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --deep: #1A0F0A;
+            --brown: #3E2723;
+            --caramel: #C68E5B;
+            --gold: #D4A574;
+            --cream: #FFF8E1;
+            --parchment: #F5F0E8;
+            --tan: #A1887F;
+            --success: #4CAF50;
+            --error: #E57373;
+            --warning: #FFB74D;
+            --info: #64B5F6;
+            --radius: 12px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Lato', 'Noto Sans SC', sans-serif;
+            background: var(--parchment);
+            color: #2C1F1A;
+            min-height: 100vh;
+        }
+
+        /* ---- Login Page ---- */
+        .login-page {
+            display: flex; align-items: center; justify-content: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--deep), var(--brown));
+            position: relative;
+            overflow: hidden;
+        }
+        .login-page::before {
+            content: ''; position: absolute; inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4z'/%3E%3C/g%3E%3C/svg%3E");
+        }
+        .login-box {
+            position: relative; z-index: 1;
+            background: rgba(255,255,255,0.95);
+            border-radius: 20px;
+            padding: 48px 40px;
+            width: 400px; max-width: 90vw;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+        .login-box .logo { font-size: 3rem; margin-bottom: 8px; }
+        .login-box h1 {
+            font-family: 'Playfair Display', 'Noto Sans SC', serif;
+            font-size: 1.5rem; color: var(--brown); margin-bottom: 6px;
+        }
+        .login-box .subtitle { font-size: 0.85rem; color: var(--tan); margin-bottom: 28px; }
+        .login-box label {
+            display: block; text-align: left; font-size: 0.82rem; font-weight: 700;
+            color: var(--brown); margin-bottom: 6px; letter-spacing: 0.5px;
+        }
+        .login-box input {
+            width: 100%; padding: 12px 16px; font-size: 0.95rem;
+            border: 2px solid rgba(0,0,0,0.1); border-radius: 10px;
+            font-family: inherit; outline: none; transition: border 0.2s;
+            margin-bottom: 20px;
+        }
+        .login-box input:focus { border-color: var(--caramel); }
+        .login-box button {
+            width: 100%; padding: 13px;
+            background: linear-gradient(135deg, var(--caramel), #BF6F4A);
+            color: #fff; border: none; border-radius: 50px;
+            font-size: 1rem; font-weight: 700; cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .login-box button:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(198,142,91,0.4); }
+        .login-box .error { color: var(--error); font-size: 0.85rem; margin-top: 8px; display: none; }
+        .login-box .error.show { display: block; }
+
+        /* ---- Dashboard ---- */
+        .dashboard { display: none; min-height: 100vh; }
+        .dashboard.active { display: block; }
+        .login-page.hidden { display: none; }
+
+        .topbar {
+            background: #fff;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+            padding: 0 32px; height: 60px;
+            display: flex; align-items: center; justify-content: space-between;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+        }
+        .topbar .brand {
+            display: flex; align-items: center; gap: 8px;
+            font-family: 'Playfair Display', 'Noto Sans SC', serif;
+            font-weight: 900; font-size: 1.1rem; color: var(--brown);
+        }
+        .topbar .btn-logout {
+            padding: 6px 18px; background: none; border: 2px solid var(--tan);
+            border-radius: 50px; font-size: 0.82rem; cursor: pointer;
+            color: var(--tan); font-weight: 600; transition: all 0.2s;
+        }
+        .topbar .btn-logout:hover { border-color: var(--error); color: var(--error); }
+
+        .main { max-width: 1200px; margin: 0 auto; padding: 32px 24px; }
+
+        /* Stats */
+        .stats-row {
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 28px;
+        }
+        .stat-card {
+            background: #fff; border-radius: var(--radius); padding: 20px;
+            text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            border-left: 4px solid var(--gold);
+        }
+        .stat-card .num { font-size: 2rem; font-weight: 900; color: var(--brown); }
+        .stat-card .lbl { font-size: 0.8rem; color: var(--tan); margin-top: 4px; }
+        .stat-card.pending { border-left-color: var(--warning); }
+        .stat-card.confirmed { border-left-color: var(--info); }
+        .stat-card.completed { border-left-color: var(--success); }
+        .stat-card.cancelled { border-left-color: var(--error); }
+
+        /* Filters */
+        .filters {
+            display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; align-items: center;
+        }
+        .filters select, .filters input {
+            padding: 10px 16px; border: 2px solid rgba(0,0,0,0.08);
+            border-radius: 10px; font-size: 0.88rem; font-family: inherit;
+            background: #fff; outline: none; transition: border 0.2s;
+        }
+        .filters select:focus, .filters input:focus { border-color: var(--caramel); }
+        .filters .btn-refresh {
+            margin-left: auto; padding: 10px 22px;
+            background: var(--caramel); color: #fff; border: none;
+            border-radius: 50px; font-weight: 700; font-size: 0.88rem; cursor: pointer;
+            transition: all 0.2s;
+        }
+        .filters .btn-refresh:hover { opacity: 0.9; }
+
+        /* Table */
+        .table-wrap {
+            background: #fff; border-radius: var(--radius);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04); overflow: hidden;
+        }
+        table {
+            width: 100%; border-collapse: collapse; font-size: 0.88rem;
+        }
+        thead { background: var(--brown); color: #fff; }
+        thead th {
+            padding: 14px 16px; text-align: left; font-weight: 600;
+            font-size: 0.8rem; letter-spacing: 0.5px; text-transform: uppercase;
+        }
+        tbody td { padding: 12px 16px; border-bottom: 1px solid rgba(0,0,0,0.04); }
+        tbody tr:hover { background: rgba(198,142,91,0.04); }
+
+        .status-badge {
+            display: inline-block; padding: 3px 12px; border-radius: 50px;
+            font-size: 0.75rem; font-weight: 700; letter-spacing: 0.3px;
+        }
+        .status-pending { background: #FFF3E0; color: #E65100; }
+        .status-confirmed { background: #E3F2FD; color: #0D47A1; }
+        .status-completed { background: #E8F5E9; color: #1B5E20; }
+        .status-cancelled { background: #FFEBEE; color: #B71C1C; }
+
+        .action-btn {
+            padding: 4px 12px; border-radius: 50px; font-size: 0.73rem;
+            font-weight: 700; border: 2px solid; cursor: pointer;
+            background: #fff; transition: all 0.15s; margin: 2px;
+        }
+        .action-confirm { border-color: var(--info); color: var(--info); }
+        .action-confirm:hover { background: var(--info); color: #fff; }
+        .action-complete { border-color: var(--success); color: var(--success); }
+        .action-complete:hover { background: var(--success); color: #fff; }
+        .action-cancel { border-color: var(--error); color: var(--error); }
+        .action-cancel:hover { background: var(--error); color: #fff; }
+
+        .empty-state {
+            text-align: center; padding: 60px 20px; color: var(--tan);
+        }
+        .empty-state i { font-size: 3rem; display: block; margin-bottom: 12px; opacity: 0.5; }
+
+        .toast {
+            position: fixed; bottom: 40px; left: 50%; transform: translateX(-50%);
+            background: var(--brown); color: #fff; padding: 12px 28px; border-radius: 50px;
+            font-size: 0.88rem; z-index: 999; box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+            animation: toastIn 0.3s ease;
+        }
+        @keyframes toastIn { from { opacity: 0; transform: translateX(-50%) translateY(10px); } }
+
+        .loading { text-align: center; padding: 40px; color: var(--tan); }
+        .loading i { font-size: 2rem; display: block; margin-bottom: 8px; animation: spin 1s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        @media (max-width: 768px) {
+            .stats-row { grid-template-columns: repeat(2, 1fr); }
+            .table-wrap { overflow-x: auto; }
+            table { font-size: 0.8rem; }
+            thead th, tbody td { padding: 10px 12px; }
+            .topbar { padding: 0 16px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============ Login Page ============ -->
+    <div class="login-page" id="loginPage">
+        <div class="login-box">
+            <div class="logo">☕</div>
+            <h1>隅光咖啡 · 管理后台</h1>
+            <p class="subtitle">预约管理系统</p>
+            <label for="password">管理员密码</label>
+            <input type="password" id="password" placeholder="请输入管理员密码" autofocus>
+            <button id="loginBtn"><i class="fas fa-lock-open"></i> 登 录</button>
+            <p class="error" id="loginError">密码错误，请重试</p>
+        </div>
+    </div>
+
+    <!-- ============ Dashboard ============ -->
+    <div class="dashboard" id="dashboard">
+        <div class="topbar">
+            <div class="brand">☕ 隅光咖啡 · 预约管理</div>
+            <button class="btn-logout" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> 退出</button>
+        </div>
+
+        <div class="main">
+            <!-- Stats -->
+            <div class="stats-row" id="statsRow">
+                <div class="stat-card"><div class="num" id="statTotal">-</div><div class="lbl">全部预约</div></div>
+                <div class="stat-card pending"><div class="num" id="statPending">-</div><div class="lbl">待确认</div></div>
+                <div class="stat-card confirmed"><div class="num" id="statConfirmed">-</div><div class="lbl">已确认</div></div>
+                <div class="stat-card completed"><div class="num" id="statCompleted">-</div><div class="lbl">已完成</div></div>
+            </div>
+
+            <!-- Filters -->
+            <div class="filters">
+                <select id="filterStatus">
+                    <option value="">全部状态</option>
+                    <option value="pending">待确认</option>
+                    <option value="confirmed">已确认</option>
+                    <option value="completed">已完成</option>
+                    <option value="cancelled">已取消</option>
+                </select>
+                <input type="date" id="filterDate" placeholder="按日期筛选">
+                <button class="btn-refresh" id="refreshBtn"><i class="fas fa-sync-alt"></i> 刷新</button>
+            </div>
+
+            <!-- Table -->
+            <div class="table-wrap" id="tableWrap">
+                <div class="loading"><i class="fas fa-spinner"></i>加载中...</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    (() => {
+        const API = 'https://yuguang-reserve-api.g18781875638.workers.dev';
+        let token = sessionStorage.getItem('admin_token');
+
+        const $ = s => document.querySelector(s);
+
+        // ---- Login ----
+        if (token) {
+            showDashboard();
+        }
+
+        $('#loginBtn').addEventListener('click', async () => {
+            const pw = $('#password').value;
+            if (!pw) return;
+
+            try {
+                const resp = await fetch(`${API}/api/admin/login`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ password: pw }),
+                });
+                const data = await resp.json();
+
+                if (data.success) {
+                    token = data.token;
+                    sessionStorage.setItem('admin_token', token);
+                    $('#loginError').classList.remove('show');
+                    showDashboard();
+                } else {
+                    $('#loginError').classList.add('show');
+                    $('#password').value = '';
+                    $('#password').focus();
+                }
+            } catch (e) {
+                $('#loginError').textContent = '连接失败，请检查网络';
+                $('#loginError').classList.add('show');
+            }
+        });
+
+        $('#password').addEventListener('keydown', e => {
+            if (e.key === 'Enter') $('#loginBtn').click();
+        });
+
+        // ---- Logout ----
+        $('#logoutBtn').addEventListener('click', () => {
+            sessionStorage.removeItem('admin_token');
+            token = null;
+            $('#dashboard').classList.remove('active');
+            $('#loginPage').classList.remove('hidden');
+            $('#password').value = '';
+            $('#password').focus();
+        });
+
+        async function showDashboard() {
+            $('#loginPage').classList.add('hidden');
+            $('#dashboard').classList.add('active');
+            await loadReservations();
+        }
+
+        async function loadReservations() {
+            const status = $('#filterStatus').value;
+            const date = $('#filterDate').value;
+
+            let qs = '';
+            if (status) qs += `&status=${status}`;
+            if (date) qs += `&date=${date}`;
+            if (qs) qs = '?' + qs.slice(1);
+
+            $('#tableWrap').innerHTML = '<div class="loading"><i class="fas fa-spinner"></i>加载中...</div>';
+
+            try {
+                const resp = await fetch(`${API}/api/admin/reservations${qs}`, {
+                    headers: { 'Authorization': `Bearer ${token}` },
+                });
+
+                if (resp.status === 401) {
+                    sessionStorage.removeItem('admin_token');
+                    token = null;
+                    $('#dashboard').classList.remove('active');
+                    $('#loginPage').classList.remove('hidden');
+                    return;
+                }
+
+                const data = await resp.json();
+
+                // Update stats
+                $('#statTotal').textContent = data.total;
+                $('#statPending').textContent = data.stats?.pending || 0;
+                $('#statConfirmed').textContent = data.stats?.confirmed || 0;
+                $('#statCompleted').textContent = data.stats?.completed || 0;
+
+                if (data.reservations.length === 0) {
+                    $('#tableWrap').innerHTML = `
+                        <div class="empty-state">
+                            <i class="fas fa-coffee"></i>
+                            <p>暂无预约记录</p>
+                        </div>`;
+                    return;
+                }
+
+                renderTable(data.reservations);
+            } catch (e) {
+                $('#tableWrap').innerHTML = `
+                    <div class="empty-state">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <p>加载失败，请检查网络</p>
+                    </div>`;
+            }
+        }
+
+        function renderTable(reservations) {
+            const rows = reservations.map(r => {
+                const statusClass = `status-${r.status}`;
+                const statusLabels = { pending: '待确认', confirmed: '已确认', completed: '已完成', cancelled: '已取消' };
+
+                let actions = '';
+                if (r.status === 'pending') {
+                    actions += `<button class="action-btn action-confirm" data-id="${r.id}" data-status="confirmed">✓ 确认</button>`;
+                    actions += `<button class="action-btn action-cancel" data-id="${r.id}" data-status="cancelled">✕ 取消</button>`;
+                }
+                if (r.status === 'confirmed') {
+                    actions += `<button class="action-btn action-complete" data-id="${r.id}" data-status="completed">✓ 完成</button>`;
+                    actions += `<button class="action-btn action-cancel" data-id="${r.id}" data-status="cancelled">✕ 取消</button>`;
+                }
+
+                return `
+                    <tr>
+                        <td>${r.id}</td>
+                        <td><strong>${escapeHTML(r.name)}</strong></td>
+                        <td>${r.phone}</td>
+                        <td>${r.reserve_date}</td>
+                        <td>${r.time_slot_label || r.time_slot}</td>
+                        <td>${r.guests}人</td>
+                        <td>${escapeHTML(r.notes || '-')}</td>
+                        <td><span class="status-badge ${statusClass}">${statusLabels[r.status]}</span></td>
+                        <td nowrap>${actions || '<span style="color:var(--tan);font-size:0.8rem">-</span>'}</td>
+                    </tr>`;
+            }).join('');
+
+            $('#tableWrap').innerHTML = `
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th><th>姓名</th><th>手机号</th><th>日期</th>
+                            <th>时段</th><th>人数</th><th>备注</th><th>状态</th><th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>${rows}</tbody>
+                </table>`;
+
+            // Bind action buttons
+            $('#tableWrap').querySelectorAll('.action-btn').forEach(btn => {
+                btn.addEventListener('click', async () => {
+                    const id = btn.dataset.id;
+                    const status = btn.dataset.status;
+                    await updateStatus(id, status);
+                });
+            });
+        }
+
+        async function updateStatus(id, status) {
+            try {
+                const resp = await fetch(`${API}/api/admin/reservations/${id}`, {
+                    method: 'PATCH',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`,
+                    },
+                    body: JSON.stringify({ status }),
+                });
+                const data = await resp.json();
+
+                if (data.success) {
+                    showToast('状态更新成功');
+                    await loadReservations();
+                } else {
+                    showToast('更新失败: ' + (data.errors || []).join('; '));
+                }
+            } catch (e) {
+                showToast('网络错误');
+            }
+        }
+
+        function showToast(msg) {
+            const existing = document.querySelector('.toast');
+            if (existing) existing.remove();
+            const t = document.createElement('div');
+            t.className = 'toast';
+            t.textContent = msg;
+            document.body.appendChild(t);
+            setTimeout(() => t.remove(), 2500);
+        }
+
+        function escapeHTML(str) {
+            const d = document.createElement('div');
+            d.textContent = str;
+            return d.innerHTML;
+        }
+
+        // Filter & refresh events
+        $('#filterStatus').addEventListener('change', loadReservations);
+        $('#filterDate').addEventListener('change', loadReservations);
+        $('#refreshBtn').addEventListener('click', loadReservations);
+    })();
+    </script>
+</body>
+</html>

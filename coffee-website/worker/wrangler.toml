@@ -1,0 +1,10 @@
+# 隅光咖啡 — 预约 API Worker 配置
+name = "yuguang-reserve-api"
+main = "index.js"
+compatibility_date = "2025-01-01"
+
+# 绑定 D1 数据库（请将 database_id 替换为你的实际 ID）
+[[d1_databases]]
+binding = "DB"
+database_name = "yuguang-db"
+database_id = "2b28be4a-1518-4345-af1e-8e33d97f1faf"

@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="隅光咖啡 — 在城市角落，慢煮一杯光。精品手冲咖啡、意式特调、手工甜点，为您打造温暖舒适的咖啡体验。">
+    <meta name="keywords" content="咖啡,咖啡馆,手冲咖啡,精品咖啡,隅光咖啡,coffee">
+    <title>隅光咖啡 Yú Guāng Coffee | 城市角落的一束光</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Lato:wght@300;400;700;900&family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ==================== NAVIGATION ==================== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <span class="logo-icon">☕</span>
+                <span class="logo-text">隅光咖啡</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link" data-i18n="nav-home">首页</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link" data-i18n="nav-about">关于我们</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#menu" class="nav-link" data-i18n="nav-menu">菜单</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#gallery" class="nav-link" data-i18n="nav-gallery">画廊</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#locations" class="nav-link" data-i18n="nav-locations">门店</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#reserve" class="nav-link" data-i18n="nav-reserve">在线预约</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link" data-i18n="nav-contact">联系我们</a>
+                </li>
+            </ul>
+            <div class="nav-actions">
+                <button class="btn btn-outline btn-sm lang-toggle" id="langToggle" aria-label="Switch language">
+                    <span class="lang-zh">EN</span>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="hero-video-container">
+            <div class="hero-bg-image"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge" data-aos="fade-down" data-aos-duration="800">
+                <span>✦ 精品咖啡 · 始于 2018 ✦</span>
+            </div>
+            <h1 class="hero-title" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                <span class="title-line-1">在城市角落</span>
+                <span class="title-line-2">慢煮<span class="hero-highlight">一杯光</span></span>
+            </h1>
+            <p class="hero-subtitle" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                精选全球优质咖啡豆，由冠军烘焙师手工烘焙<br>
+                每一杯，都是我们对品质的偏执
+            </p>
+            <div class="hero-cta" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
+                <a href="#menu" class="btn btn-primary btn-lg">
+                    探索菜单 <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#about" class="btn btn-outline btn-lg">
+                    了解我们 <i class="fas fa-coffee"></i>
+                </a>
+            </div>
+            <div class="hero-scroll" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1000">
+                <span>向下探索</span>
+                <div class="scroll-mouse">
+                    <div class="scroll-dot"></div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-decor">
+            <div class="hero-leaf leaf-1">🍃</div>
+            <div class="hero-leaf leaf-2">🌿</div>
+            <div class="hero-leaf leaf-3">🫘</div>
+        </div>
+    </section>
+
+    <!-- ==================== ABOUT SECTION ==================== -->
+    <section class="about section" id="about">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">关于我们</span>
+                <h2 class="section-title">隅光故事的开始</h2>
+                <div class="section-divider">
+                    <span class="divider-line"></span>
+                    <span class="divider-icon"><i class="fas fa-mug-hot"></i></span>
+                    <span class="divider-line"></span>
+                </div>
+                <p class="section-desc">
+                    隅光，是城市角落里的一束光。我们相信，一杯好咖啡可以照亮一个人的一天。
+                </p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-image-wrapper" data-aos="fade-right" data-aos-duration="1200">
+                    <div class="about-image-main">
+                        <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=600&h=750&fit=crop" alt="咖啡店内景" loading="lazy">
+                    </div>
+                    <div class="about-image-float">
+                        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=300&h=300&fit=crop" alt="手冲咖啡" loading="lazy">
+                    </div>
+                    <div class="about-experience-badge">
+                        <span class="badge-number">8+</span>
+                        <span class="badge-label">年精品咖啡经验</span>
+                    </div>
+                </div>
+
+                <div class="about-content" data-aos="fade-left" data-aos-duration="1200">
+                    <h3 class="about-heading">
+                        不止是咖啡，<br>更是<span class="text-accent">生活方式</span>
+                    </h3>
+                    <p class="about-text">
+                        2018年，三位热爱咖啡的年轻人在城市的一隅开设了第一家隅光咖啡。从最初的一台手冲壶、几包生豆开始，我们坚持每一杯都用心制作。
+                    </p>
+                    <p class="about-text">
+                        我们亲自走访全球五大咖啡产区，与当地农户建立直接贸易关系，确保每一颗豆子都能追溯到它的故乡。从埃塞俄比亚的耶加雪菲，到哥伦比亚的蕙兰，每一款豆子都承载着风土的故事。
+                    </p>
+
+                    <div class="about-values">
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fas fa-seedling"></i>
+                            </div>
+                            <div class="value-info">
+                                <h4>产地直采</h4>
+                                <p>与全球12个咖啡庄园直接合作</p>
+                            </div>
+                        </div>
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fas fa-fire"></i>
+                            </div>
+                            <div class="value-info">
+                                <h4>手工烘焙</h4>
+                                <p>冠军烘焙师小批量精焙</p>
+                            </div>
+                        </div>
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="value-info">
+                                <h4>社区温度</h4>
+                                <p>每季度举办咖啡品鉴沙龙</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="#menu" class="btn btn-primary">
+                        品味我们的咖啡 <i class="fas fa-chevron-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== STATS COUNTER ==================== -->
+    <section class="stats section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item" data-aos="zoom-in" data-aos-delay="0">
+                    <div class="stat-icon"><i class="fas fa-store"></i></div>
+                    <div class="stat-number counter" data-target="5">0</div>
+                    <div class="stat-label">城市门店</div>
+                </div>
+                <div class="stat-item" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="stat-icon"><i class="fas fa-mug-saucer"></i></div>
+                    <div class="stat-number counter" data-target="500000">0</div>
+                    <div class="stat-label">累计出品杯数</div>
+                </div>
+                <div class="stat-item" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="stat-icon"><i class="fas fa-globe-americas"></i></div>
+                    <div class="stat-number counter" data-target="12">0</div>
+                    <div class="stat-label">合作咖啡庄园</div>
+                </div>
+                <div class="stat-item" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="stat-icon"><i class="fas fa-award"></i></div>
+                    <div class="stat-number counter" data-target="23">0</div>
+                    <div class="stat-label">行业奖项</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== MENU SECTION ==================== -->
+    <section class="menu section" id="menu">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">我们的菜单</span>
+                <h2 class="section-title">精心呈现每一杯</h2>
+                <div class="section-divider">
+                    <span class="divider-line"></span>
+                    <span class="divider-icon"><i class="fas fa-mug-hot"></i></span>
+                    <span class="divider-line"></span>
+                </div>
+                <p class="section-desc">
+                    从经典意式到创意特调，从单品手冲到精致甜点，总有一款适合此刻的你。
+                </p>
+            </div>
+
+            <!-- Menu Category Filter -->
+            <div class="menu-filters" data-aos="fade-up">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-th-large"></i> 全部
+                </button>
+                <button class="filter-btn" data-filter="espresso">
+                    <i class="fas fa-coffee"></i> 意式咖啡
+                </button>
+                <button class="filter-btn" data-filter="pour-over">
+                    <i class="fas fa-flask"></i> 手冲单品
+                </button>
+                <button class="filter-btn" data-filter="special">
+                    <i class="fas fa-star"></i> 创意特调
+                </button>
+                <button class="filter-btn" data-filter="dessert">
+                    <i class="fas fa-cake-candles"></i> 甜品轻食
+                </button>
+            </div>
+
+            <!-- Menu Grid -->
+            <div class="menu-grid" id="menuGrid">
+
+                <!-- Espresso Items -->
+                <div class="menu-card" data-category="espresso" data-aos="fade-up" data-aos-delay="0">
+                    <div class="menu-card-image">
+                        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&h=300&fit=crop" alt="经典拿铁" loading="lazy">
+                        <div class="menu-card-overlay">
+                            <span class="menu-price">¥28</span>
+                        </div>
+                        <span class="menu-tag tag-hot">热/冰</span>
+                    </div>
+                    <div class="menu-card-info">
+                        <h3>经典拿铁</h3>
+                        <p>双份浓缩与丝滑牛奶的完美融合，表面覆以绵密奶泡</p>
+                        <div class="menu-card-footer">
+                            <span class="menu-price-display">¥28</span>
+                            <span class="menu-badge">最受欢迎</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="espresso" data-aos="fade-up" data-aos-delay="100">
+                    <div class="menu-card-image">
+                        <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?w=400&h=300&fit=crop" alt="卡布奇诺" loading="lazy">
+                        <div class="menu-card-overlay">
+                            <span class="menu-price">¥26</span>
+                        </div>
+                        <span class="menu-tag tag-hot">热/冰</span>
+                    </div>
+                    <div class="menu-card-info">
+                        <h3>卡布奇诺</h3>
+                        <p>等份浓缩、蒸汽牛奶与奶泡，经典的意式三重奏</p>
+                        <div class="menu-card-footer">
+                            <span class="menu-price-display">¥26</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="espresso" data-aos="fade-up" data-aos-delay="200">
+                    <div class="menu-card-image">
+                        <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=300&fit=crop" alt="美式咖啡" loading="lazy">
+                        <div class="menu-card-overlay">
+                            <span class="menu-price">¥22</span>
+                        </div>
+                        <span class="menu-tag tag-hot">热/冰</span>
+                    </div>
+                    <div class="menu-card-info">
+                        <h3>美式咖啡</h3>
+                        <p>浓缩咖啡与热水的清爽结合，口感醇净，回甘悠长</p>
+                        <div class="menu-card-footer">
+                            <span class="menu-price-display">¥22</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="espresso" data-aos="fade-up" data-aos-delay="300">
+                    <div class="menu-card-image">
+                        <img src="https://images.unsplash.com/photo-1577968897966-3d4325b36b61?w=400&h=300&fit=crop" alt="焦糖玛奇朵" loading="lazy">
+                        <div class="menu-card-overlay">
+                            <span class="menu-price">¥32</span>
+                        </div>
+                        <span class="menu-tag tag-hot">热/冰</span>
+                    </div>
+                    <div class="menu-card-info">
+                        <h3>焦糖玛奇朵</h3>
+                        <p>香草牛奶打底，融入浓缩咖啡，顶部淋上焦糖酱</p>
+                        <div class="menu-card-footer">
+                            <span class="menu-price-display">¥32</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pour-over Items -->
+                <div class="menu-card" data-category="pour-over" data-aos="fade-up" data-aos-delay="0">
+                    <div class="menu-card-image">
+                        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&h=300&fit=crop" alt="耶加雪菲" loading="lazy">
+                        <div class="menu-card-overlay">
+                            <span class="menu-price">¥38</span>
+                        </div>
+                        <span class="menu-tag tag-new">新品</span>
+                    </div>
+                    <div class="menu-card-info">
+                        <h3>埃塞·耶加雪菲</h3>
+                        <p>花香柑橘调性，茉莉花与柠檬草的清新尾韵</p>
+                        <div class="menu-card-footer">
+                            <span class="menu-price-display">¥38</span>
+                            <span class="menu-note">日晒·浅烘</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="pour-over" data-aos="fade-up" data-aos-delay="100">
+                    <div class="menu-card-image">
+                        <img src="https://images.unsplash.com/photo-1559496417-e7f25cb247f3?w=400&h=300&fit=crop" alt="哥伦比亚咖啡" loading="lazy">
+                        <div class="menu-card-overlay">
+                            <span class="menu-price">¥35</span>
+                        </div>
+                        <span class="menu-tag tag-new">新品</span>
+                    </div>
+                    <div class="menu-card-info">
+                        <h3>哥伦比亚·蕙兰</h3>
+                        <p>焦糖甜感，坚果巧克力风味，口感圆润饱满</p>
+                        <div class="menu-card-footer">
+                            <span class="menu-price-display">¥35</span>
+                            <span class="menu-note">水洗·中烘</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="pour-over" data-aos="fade-up" data-aos-delay="200">
+                    <div class="menu-card-image">
+                        <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=400&h=300&fit=crop" alt="曼特宁" loading="lazy">
+                        <div class="menu-card-overlay">
+                            <span class="menu-price">¥36</span>
+                        </div>
+                    </div>
+                    <div class="menu-card-info">
+                        <h3>印尼·黄金曼特宁</h3>
+                        <p>草本香料气息，黑巧克力与焦糖的浓郁厚重感</p>
+                        <div class="menu-card-footer">
+                            <span class="menu-price-display">¥36</span>
+                            <span class="menu-note">湿刨·深烘</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Special Items -->
+                <div class="menu-card" data-category="special" data-aos="fade-up" data-aos-delay="0">
+                    <div class="menu-card-image">
+                        <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefda?w=400&h=300&fit=crop" alt="隅光特调" loading="lazy">
+                        <div class="menu-card-overlay">
+                            <span class="menu-price">¥42</span>
+                        </div>
+                        <span class="menu-tag tag-special">招牌</span>
+                    </div>
+                    <div class="menu-card-info">
+                        <h3>隅光特调 · 晨光</h3>
+                        <p>冷萃咖啡基底，搭配橙花蜂蜜、柠檬汁与迷迭香</p>
+                        <div class="menu-card-footer">
+                            <span class="menu-price-display">¥42</span>
+                            <span class="menu-badge">必试推荐</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="special" data-aos="fade-up" data-aos-delay="100">
+                    <div class="menu-card-image">
+                        <img src="https://images.unsplash.com/photo-1485808191679-5f86510681a2?w=400&h=300&fit=crop" alt="落日特调" loading="lazy">
+                        <div class="menu-card-overlay">
+                            <span class="menu-price">¥45</span>
+                        </div>
+                        <span class="menu-tag tag-special">招牌</span>
+                    </div>
+                    <div class="menu-card-info">
+                        <h3>隅光特调 · 落日</h3>
+                        <p>浓缩咖啡 × 海盐焦糖 × 燕麦奶，层次丰富的咸甜交响</p>
+                        <div class="menu-card-footer">
+                            <span class="menu-price-display">¥45</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="special" data-aos="fade-up" data-aos-delay="200">
+                    <div class="menu-card-image">
+                        <img src="https://images.unsplash.com/photo-1578314675249-a6910f80cc4e?w=400&h=300&fit=crop" alt="樱花拿铁" loading="lazy">
+                        <div class="menu-card-overlay">
+                            <span class="menu-price">¥38</span>
+                        </div>
+                        <span class="menu-tag tag-seasonal">季节限定</span>
+                    </div>
+                    <div class="menu-card-info">
+                        <h3>春日·樱花拿铁</h3>
+                        <p>自制樱花糖浆 × 抹茶奶盖，春天的味道</p>
+                        <div class="menu-card-footer">
+                            <span class="menu-price-display">¥38</span>
+                            <span class="menu-note">限定供应</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dessert Items -->
+                <div class="menu-card" data-category="dessert" data-aos="fade-up" data-aos-delay="0">
+                    <div class="menu-card-image">
+                        <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=400&h=300&fit=crop" alt="提拉米苏" loading="lazy">
+                        <div class="menu-card-overlay">
+                            <span class="menu-price">¥35</span>
+                        </div>
+                    </div>
+                    <div class="menu-card-info">
+                        <h3>经典提拉米苏</h3>
+                        <p>马斯卡彭奶酪 × 浓缩咖啡浸泡的手指饼干</p>
+                        <div class="menu-card-footer">
+                            <span class="menu-price-display">¥35</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="dessert" data-aos="fade-up" data-aos-delay="100">
+                    <div class="menu-card-image">
+                        <img src="https://images.unsplash.com/photo-1509365465985-25d11c17e812?w=400&h=300&fit=crop" alt="牛角可颂" loading="lazy">
+                        <div class="menu-card-overlay">
+                            <span class="menu-price">¥22</span>
+                        </div>
+                    </div>
+                    <div class="menu-card-info">
+                        <h3>黄油可颂</h3>
+                        <p>法国AOP黄油，27层折叠，外酥内软</p>
+                        <div class="menu-card-footer">
+                            <span class="menu-price-display">¥22</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="dessert" data-aos="fade-up" data-aos-delay="200">
+                    <div class="menu-card-image">
+                        <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=400&h=300&fit=crop" alt="巴斯克芝士蛋糕" loading="lazy">
+                        <div class="menu-card-overlay">
+                            <span class="menu-price">¥38</span>
+                        </div>
+                        <span class="menu-tag tag-new">新品</span>
+                    </div>
+                    <div class="menu-card-info">
+                        <h3>巴斯克芝士蛋糕</h3>
+                        <p>焦香外皮 × 流心质感，入口即化的浓郁芝士</p>
+                        <div class="menu-card-footer">
+                            <span class="menu-price-display">¥38</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Menu CTA -->
+            <div class="menu-cta" data-aos="fade-up">
+                <a href="#" class="btn btn-outline btn-lg">
+                    <i class="fas fa-download"></i> 下载完整菜单 PDF
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== TESTIMONIALS ==================== -->
+    <section class="testimonials section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">顾客好评</span>
+                <h2 class="section-title">他们与隅光的故事</h2>
+                <div class="section-divider">
+                    <span class="divider-line"></span>
+                    <span class="divider-icon"><i class="fas fa-heart"></i></span>
+                    <span class="divider-line"></span>
+                </div>
+            </div>
+
+            <div class="testimonials-slider" data-aos="fade-up">
+                <div class="testimonial-card active">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "在这里找到了城市中最安静的角落。手冲耶加雪菲的花香让人惊艳，每次来都有新的发现。已经成为我每周必来的地方。"
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop" alt="顾客头像" class="author-avatar" loading="lazy">
+                        <div class="author-info">
+                            <h4>林晓薇</h4>
+                            <span>常客 · 设计师</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "隅光的特调太有创意了！'晨光'那款冷萃特调完全刷新了我对咖啡的认知。店里的氛围也很适合办公和阅读。"
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="顾客头像" class="author-avatar" loading="lazy">
+                        <div class="author-info">
+                            <h4>陈子昂</h4>
+                            <span>自由撰稿人</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "周末和朋友一起来，点了卡布奇诺和巴斯克蛋糕，太满足了。咖啡师还会细心介绍每款豆子的风味，非常专业。"
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" alt="顾客头像" class="author-avatar" loading="lazy">
+                        <div class="author-info">
+                            <h4>王雨晴</h4>
+                            <span>咖啡爱好者</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-dots">
+                    <button class="dot active" data-index="0" aria-label="Review 1"></button>
+                    <button class="dot" data-index="1" aria-label="Review 2"></button>
+                    <button class="dot" data-index="2" aria-label="Review 3"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== GALLERY SECTION ==================== -->
+    <section class="gallery section" id="gallery">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">空间美学</span>
+                <h2 class="section-title">隅光 · 视觉画廊</h2>
+                <div class="section-divider">
+                    <span class="divider-line"></span>
+                    <span class="divider-icon"><i class="fas fa-camera"></i></span>
+                    <span class="divider-line"></span>
+                </div>
+                <p class="section-desc">
+                    用镜头记录咖啡与空间的对话，感受隅光的温度与质感。
+                </p>
+            </div>
+        </div>
+
+        <div class="gallery-grid" data-aos="fade-up">
+            <div class="gallery-item gallery-item-tall">
+                <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=500&h=700&fit=crop" alt="咖啡店角落" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="gallery-info">
+                        <h4>阅读角</h4>
+                        <p>书籍与咖啡的最佳搭配</p>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item gallery-item-wide">
+                <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=700&h=500&fit=crop" alt="咖啡制作区" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="gallery-info">
+                        <h4>吧台区</h4>
+                        <p>近距离观赏咖啡制作过程</p>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?w=500&h=500&fit=crop" alt="拿铁拉花" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="gallery-info">
+                        <h4>拿铁艺术</h4>
+                        <p>每一杯都是用心之作</p>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?w=500&h=500&fit=crop" alt="咖啡豆" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="gallery-info">
+                        <h4>精选咖啡豆</h4>
+                        <p>全球产区优质生豆</p>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item gallery-item-wide">
+                <img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?w=700&h=500&fit=crop" alt="室外座位" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="gallery-info">
+                        <h4>露台区</h4>
+                        <p>享受阳光与微风</p>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item gallery-item-tall">
+                <img src="https://images.unsplash.com/photo-1507133750040-4a8f570215b8?w=500&h=700&fit=crop" alt="手冲器具" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="gallery-info">
+                        <h4>手冲器具</h4>
+                        <p>专业的设备，匠人精神</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lightbox -->
+        <div class="lightbox" id="lightbox">
+            <button class="lightbox-close" id="lightboxClose"><i class="fas fa-times"></i></button>
+            <button class="lightbox-prev" id="lightboxPrev"><i class="fas fa-chevron-left"></i></button>
+            <div class="lightbox-content">
+                <img src="" alt="" id="lightboxImg">
+            </div>
+            <button class="lightbox-next" id="lightboxNext"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <!-- ==================== LOCATIONS SECTION ==================== -->
+    <section class="locations section" id="locations">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">找到我们</span>
+                <h2 class="section-title">城市中的隅光角落</h2>
+                <div class="section-divider">
+                    <span class="divider-line"></span>
+                    <span class="divider-icon"><i class="fas fa-map-marker-alt"></i></span>
+                    <span class="divider-line"></span>
+                </div>
+                <p class="section-desc">
+                    每一家隅光都有独特的空间设计，但都承载着同一种温暖。
+                </p>
+            </div>
+
+            <div class="locations-grid">
+                <div class="location-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="location-image">
+                        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=500&h=300&fit=crop" alt="隅光·胡同店" loading="lazy">
+                        <span class="location-badge">旗舰店</span>
+                    </div>
+                    <div class="location-info">
+                        <h3>隅光咖啡 · 胡同店</h3>
+                        <p class="location-address">
+                            <i class="fas fa-map-pin"></i> 北京市东城区南锣鼓巷28号
+                        </p>
+                        <div class="location-hours">
+                            <div class="hours-row">
+                                <span>周一至周五</span>
+                                <span>7:30 — 22:00</span>
+                            </div>
+                            <div class="hours-row">
+                                <span>周六至周日</span>
+                                <span>8:00 — 23:00</span>
+                            </div>
+                        </div>
+                        <div class="location-contact-row">
+                            <span><i class="fas fa-phone"></i> 010-6401-2888</span>
+                            <span><i class="fas fa-subway"></i> 南锣鼓巷站</span>
+                        </div>
+                        <a href="#" class="btn btn-outline btn-sm btn-full">查看地图 <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <div class="location-card" data-aos="fade-up" data-aos-delay="150">
+                    <div class="location-image">
+                        <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=500&h=300&fit=crop" alt="隅光·CBD店" loading="lazy">
+                    </div>
+                    <div class="location-info">
+                        <h3>隅光咖啡 · CBD店</h3>
+                        <p class="location-address">
+                            <i class="fas fa-map-pin"></i> 北京市朝阳区国贸大厦B1-12
+                        </p>
+                        <div class="location-hours">
+                            <div class="hours-row">
+                                <span>周一至周五</span>
+                                <span>7:00 — 21:00</span>
+                            </div>
+                            <div class="hours-row">
+                                <span>周六至周日</span>
+                                <span>9:00 — 20:00</span>
+                            </div>
+                        </div>
+                        <div class="location-contact-row">
+                            <span><i class="fas fa-phone"></i> 010-6505-1888</span>
+                            <span><i class="fas fa-subway"></i> 国贸站</span>
+                        </div>
+                        <a href="#" class="btn btn-outline btn-sm btn-full">查看地图 <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <div class="location-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="location-image">
+                        <img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?w=500&h=300&fit=crop" alt="隅光·望京店" loading="lazy">
+                        <span class="location-badge location-badge-new">新开业</span>
+                    </div>
+                    <div class="location-info">
+                        <h3>隅光咖啡 · 望京店</h3>
+                        <p class="location-address">
+                            <i class="fas fa-map-pin"></i> 北京市朝阳区望京SOHO T1-108
+                        </p>
+                        <div class="location-hours">
+                            <div class="hours-row">
+                                <span>周一至周五</span>
+                                <span>7:30 — 22:00</span>
+                            </div>
+                            <div class="hours-row">
+                                <span>周六至周日</span>
+                                <span>8:00 — 22:00</span>
+                            </div>
+                        </div>
+                        <div class="location-contact-row">
+                            <span><i class="fas fa-phone"></i> 010-8472-1688</span>
+                            <span><i class="fas fa-subway"></i> 望京站</span>
+                        </div>
+                        <a href="#" class="btn btn-outline btn-sm btn-full">查看地图 <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== RESERVATION SECTION ==================== -->
+    <section class="reserve section" id="reserve">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">在线预约</span>
+                <h2 class="section-title">预约一个角落</h2>
+                <div class="section-divider">
+                    <span class="divider-line"></span>
+                    <span class="divider-icon"><i class="fas fa-calendar-check"></i></span>
+                    <span class="divider-line"></span>
+                </div>
+                <p class="section-desc">
+                    提前预约您心仪的时段和位置，我们将为您预留最舒适的角落。
+                </p>
+            </div>
+
+            <div class="reserve-grid">
+                <!-- Reserve Form -->
+                <div class="reserve-form-wrapper" data-aos="fade-right" data-aos-duration="1000">
+                    <form class="reserve-form" id="reserveForm" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="rName">您的姓名 <span class="required">*</span></label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" id="rName" name="name" placeholder="请输入您的姓名" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="rPhone">手机号码 <span class="required">*</span></label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <input type="tel" id="rPhone" name="phone" placeholder="请输入11位手机号" required maxlength="11">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="rDate">预约日期 <span class="required">*</span></label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-calendar"></i>
+                                    <input type="date" id="rDate" name="date" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="rTimeSlot">预约时段 <span class="required">*</span></label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-clock"></i>
+                                    <select id="rTimeSlot" name="timeSlot" required>
+                                        <option value="">请选择时段</option>
+                                        <option value="morning">上午 9:00 — 12:00</option>
+                                        <option value="afternoon">下午 13:00 — 17:00</option>
+                                        <option value="evening">晚间 18:00 — 21:00</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="rGuests">人数 <span class="required">*</span></label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-users"></i>
+                                    <input type="number" id="rGuests" name="guests" placeholder="1-20人" min="1" max="20" value="2" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="rNotes">备注（选填）</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-pencil-alt"></i>
+                                <textarea id="rNotes" name="notes" rows="3" placeholder="如有特殊需求请在此备注，如：靠窗位置、需要婴儿椅等"></textarea>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-lg btn-full">
+                            <i class="fas fa-paper-plane"></i> 提交预约
+                        </button>
+                        <div class="form-feedback" id="reserveFeedback"></div>
+                    </form>
+                </div>
+
+                <!-- Reserve Info -->
+                <div class="reserve-info-wrapper" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="reserve-info-card">
+                        <h3><i class="fas fa-info-circle"></i> 预约须知</h3>
+                        <ul class="reserve-info-list">
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>预约<span class="text-accent">免费</span>，到店消费即可</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>请提前<span class="text-accent">至少2小时</span>预约</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>预约保留<span class="text-accent">15分钟</span>，超时将自动取消</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>如需取消，请提前致电门店</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>超过<span class="text-accent">6人</span>请直接致电门店预约</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Your Reservations -->
+                    <div class="reserve-lookup-card" id="reserveLookup">
+                        <h4><i class="fas fa-search"></i> 查询我的预约</h4>
+                        <div class="lookup-input-group">
+                            <input type="tel" id="lookupPhone" placeholder="输入手机号查询预约" maxlength="11">
+                            <button type="button" class="btn btn-primary" id="lookupBtn">查询</button>
+                        </div>
+                        <div class="lookup-results" id="lookupResults"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CONTACT SECTION ==================== -->
+    <section class="contact section" id="contact">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">保持联系</span>
+                <h2 class="section-title">期待与您相遇</h2>
+                <div class="section-divider">
+                    <span class="divider-line"></span>
+                    <span class="divider-icon"><i class="fas fa-envelope"></i></span>
+                    <span class="divider-line"></span>
+                </div>
+                <p class="section-desc">
+                    无论是合作洽谈、活动预约，还是只想打个招呼，我们都很乐意听到您的声音。
+                </p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-form-wrapper" data-aos="fade-right" data-aos-duration="1000">
+                    <form class="contact-form" id="contactForm" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">您的姓名 <span class="required">*</span></label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" id="name" name="name" placeholder="请输入您的姓名" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">电子邮箱 <span class="required">*</span></label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-envelope"></i>
+                                    <input type="email" id="email" name="email" placeholder="请输入您的邮箱" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">主题</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-tag"></i>
+                                <select id="subject" name="subject">
+                                    <option value="">请选择主题</option>
+                                    <option value="catering">商务合作 / 团餐</option>
+                                    <option value="event">活动预约 / 包场</option>
+                                    <option value="feedback">意见反馈</option>
+                                    <option value="wholesale">咖啡豆批发</option>
+                                    <option value="other">其他</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">留言内容 <span class="required">*</span></label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-comment"></i>
+                                <textarea id="message" name="message" rows="5" placeholder="请输入您想说的话..." required></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg btn-full">
+                            <i class="fas fa-paper-plane"></i> 发送消息
+                        </button>
+                        <div class="form-feedback" id="formFeedback"></div>
+                    </form>
+                </div>
+
+                <div class="contact-info-wrapper" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="contact-info-card">
+                        <h3>联系我们</h3>
+                        <p>有任何问题或建议？欢迎通过以下方式联系。</p>
+
+                        <div class="contact-info-list">
+                            <div class="contact-info-item">
+                                <div class="ci-icon"><i class="fas fa-phone"></i></div>
+                                <div class="ci-content">
+                                    <h4>电话</h4>
+                                    <span>400-888-5288</span>
+                                </div>
+                            </div>
+                            <div class="contact-info-item">
+                                <div class="ci-icon"><i class="fas fa-envelope"></i></div>
+                                <div class="ci-content">
+                                    <h4>邮箱</h4>
+                                    <span>hello@yuguang-coffee.com</span>
+                                </div>
+                            </div>
+                            <div class="contact-info-item">
+                                <div class="ci-icon"><i class="fas fa-clock"></i></div>
+                                <div class="ci-content">
+                                    <h4>客服时间</h4>
+                                    <span>每日 9:00 — 21:00</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-social">
+                            <h4>关注我们</h4>
+                            <div class="social-links">
+                                <a href="#" class="social-link" aria-label="微信"><i class="fab fa-weixin"></i></a>
+                                <a href="#" class="social-link" aria-label="微博"><i class="fab fa-weibo"></i></a>
+                                <a href="#" class="social-link" aria-label="小红书"><i class="fas fa-book-open"></i></a>
+                                <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="social-link" aria-label="大众点评"><i class="fas fa-star"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="newsletter-card">
+                        <h4><i class="fas fa-paper-plane"></i> 订阅隅光 newsletter</h4>
+                        <p>获取最新咖啡豆上架、特调新品和活动资讯</p>
+                        <form class="newsletter-form" id="newsletterForm">
+                            <div class="newsletter-input-group">
+                                <input type="email" placeholder="请输入您的邮箱" required>
+                                <button type="submit" class="btn btn-primary">订阅</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#home" class="footer-logo">
+                        <span class="logo-icon">☕</span>
+                        <span>隅光咖啡</span>
+                    </a>
+                    <p>在城市角落，慢煮一杯光。<br>每一杯咖啡，都是我们对品质的承诺。</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="微信"><i class="fab fa-weixin"></i></a>
+                        <a href="#" aria-label="微博"><i class="fab fa-weibo"></i></a>
+                        <a href="#" aria-label="小红书"><i class="fas fa-book-open"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#home">首页</a></li>
+                        <li><a href="#about">关于我们</a></li>
+                        <li><a href="#menu">菜单</a></li>
+                        <li><a href="#gallery">画廊</a></li>
+                        <li><a href="#locations">门店</a></li>
+                        <li><a href="#contact">联系我们</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>服务</h4>
+                    <ul>
+                        <li><a href="#">咖啡豆订阅</a></li>
+                        <li><a href="#">企业团餐</a></li>
+                        <li><a href="#">活动包场</a></li>
+                        <li><a href="#">咖啡培训</a></li>
+                        <li><a href="#">礼品卡</a></li>
+                        <li><a href="#">周边商城</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>营业时间</h4>
+                    <ul class="footer-hours">
+                        <li><span>周一至周五</span><span>7:30 — 22:00</span></li>
+                        <li><span>周六至周日</span><span>8:00 — 23:00</span></li>
+                    </ul>
+                    <div class="footer-qr">
+                        <span>扫码关注公众号</span>
+                        <div class="qr-placeholder">
+                            <i class="fas fa-qrcode"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 隅光咖啡 Yú Guāng Coffee. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">隐私政策</a>
+                    <a href="#">条款与条件</a>
+                    <a href="#">Cookie 设置</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== BACK TO TOP ==================== -->
+    <button class="back-to-top" id="backToTop" aria-label="回到顶部">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>
